@@ -6,8 +6,7 @@ It leverages **AWS Generative AI services** to help students and lifelong learne
 ---
 
 ## 🎥 Demo Video  
-<video src="https://github.com/mariamalaa76/EduPal_APP/raw/main/Demo_EduPal.mp4" width="700" controls>
-</video>
+[![Watch the Demo](https://img.icons8.com/clouds/200/000000/play.png)](https://github.com/mariamalaa76/EduPal_APP/raw/main/Demo_EduPal.mp4)
 
 ---
 
