@@ -1,169 +1,145 @@
-EduPal AI - AWS-Powered Study Assistant
-EduPal is an intelligent study assistant that leverages AWS AI services to help students and learners process educational materials, generate summaries, create quizzes, and get instant answers to their questions.
+# EduPal AI - AWS-Powered Study Assistant
 
-🚀 Live Demo
-Access the application: EduPal Live App
+EduPal AI is an intelligent study assistant developed during the **Manara & AWS GANAI Hackathon**.
+It leverages **AWS Generative AI services** to help students and lifelong learners process educational materials, generate summaries, create quizzes, and receive instant answers to their questions — all in one platform.
 
-🛠️ Technologies Used
-Frontend
-Streamlit - Web application framework
+---
 
-PyPDF2 - PDF text extraction
+## 🎥 Demo Video
 
-Backend & AI
-AWS Bedrock - Generative AI models (Claude, DeepSeek)
+[![Watch the Demo](https://github.com/mariamalaa76/EduPal_APP/blob/main/Demo_EduPal.mp4)
 
-AWS Lambda - Serverless backend functions
+---
 
-API Gateway - REST API endpoints
+## 🛠️ Technologies Used
 
-EC2 - Application hosting
+### Frontend
 
-Infrastructure
-AWS IAM - Security and permissions
+* **Streamlit** – Web application framework
+* **PyPDF2** – PDF text extraction
 
-Amazon S3 - File storage (optional)
+### Backend & AI
 
-📋 Features
-📁 Document Processing: Upload PDFs and text files
+* **AWS Bedrock** – Generative AI models (Claude, DeepSeek)
+* **AWS Lambda** – Serverless backend functions
+* **Amazon API Gateway** – REST API endpoints
+* **Amazon EC2** – Application hosting
 
-🤖 Q&A Chatbot: Ask questions about your study materials
+### Infrastructure
 
-📄 Smart Summarization: Generate concise study guides
+* **AWS IAM** – Security and permissions
+* **Amazon S3** – File storage (optional)
 
-🎯 Quiz Generator: Create practice quizzes automatically
+---
 
-✅ Answer Feedback: Get explanations for quiz answers
+## 📋 Features
 
-🏗️ Architecture
-text
-Frontend (Streamlit on EC2) → API Gateway → Lambda → Bedrock AI
-📥 Installation & Setup
-Prerequisites
-Python 3.9+
+* 📁 **Document Processing** – Upload and process PDFs or text files
+* 🤖 **Q&A Chatbot** – Ask questions directly about your materials
+* 📄 **Smart Summarization** – Generate concise study notes
+* 🎯 **Quiz Generator** – Automatically create practice quizzes
+* ✅ **Answer Feedback** – Receive explanations and learning insights
 
-AWS Account with Bedrock access
+---
 
-Git
+## 🏗️ Architecture
 
-1. Clone Repository
-bash
+```
+Frontend (Streamlit on EC2) → API Gateway → Lambda → AWS Bedrock AI
+```
+
+---
+
+## 📥 Installation & Setup
+
+### Prerequisites
+
+* Python 3.9+
+* AWS Account with Bedrock access
+* Git
+
+### 1. Clone Repository
+
+```bash
 git clone https://github.com/Omarrhussain/EduPal_APP.git
 cd EduPal_APP
-2. Install Dependencies
-bash
-pip install -r requirements.txt
-requirements.txt:
+```
 
-txt
+### 2. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+**requirements.txt**
+
+```
 streamlit
 boto3
 requests
 PyPDF2
+```
 
-3. AWS Configuration
-Enable Bedrock Access:
+### 3. AWS Configuration
 
-AWS Console → Amazon Bedrock → Model Access
+* Enable Bedrock Access:
 
-Request access for: deepseek.r1-v1:0
+  * Go to **AWS Console → Amazon Bedrock → Model Access**
+  * Request access for `deepseek.r1-v1:0`
 
-Configure AWS Credentials:
+* Configure AWS Credentials:
 
-bash
+```bash
 aws configure
-# Enter your AWS Access Key, Secret Key, and Region
-4. Run Application
-bash
+# Enter AWS Access Key, Secret Key, and Region
+```
+
+### 4. Run Application
+
+```bash
 streamlit run app.py
+```
 
-🚀 Deployment
-🚀 AWS Elastic Beanstalk Deployment
-1. Initialize EB Application
-bash
-# Install EB CLI
+---
+
+## 🚀 Deployment
+
+### AWS Elastic Beanstalk
+
+1. **Initialize EB Application**
+
+```bash
 pip install awsebcli
-
-# Initialize Elastic Beanstalk
 eb init -p python-3.9 edupal-app --region us-east-2
-
-# Create environment
 eb create edupal-prod-env
-2. Configuration Files
-.ebextensions/streamlit.config:
+```
 
-3. Deploy Application
-bash
-# Deploy to Elastic Beanstalk
+2. **Deploy Application**
+
+```bash
 eb deploy
-
-# Open application
 eb open
-4. Environment Variables
-Set in Elastic Beanstalk console:
+```
 
-AWS_ACCESS_KEY_ID
+3. **Environment Variables**
+   Set in Elastic Beanstalk console:
 
-AWS_SECRET_ACCESS_KEY
+* `AWS_ACCESS_KEY_ID`
+* `AWS_SECRET_ACCESS_KEY`
+* `AWS_DEFAULT_REGION`
 
-AWS_DEFAULT_REGION
+---
 
-🔧 API Endpoints
-Endpoint	Method	Description
-/ai	POST	Main AI processing endpoint
-Actions: qa, summarize, quiz, feedback		
+## 🔧 API Endpoints
 
-💡 Usage
-Upload Documents: PDF or text files
+| Endpoint | Method | Description                                                         |
+| -------- | ------ | ------------------------------------------------------------------- |
+| `/ai`    | POST   | Main AI processing endpoint (`qa`, `summarize`, `quiz`, `feedback`) |
 
-Paste Text: Manual text input
+---
 
-Use AI Features:
+**EduPal AI – Making studying smarter with AWS Generative AI! 🎓**
 
-Ask questions about content
+---
 
-Generate study summaries
-
-Create practice quizzes
-
-Check answers with feedback
-
-🔒 AWS Services Setup
-Lambda Function
-Runtime: Python 3.9
-
-Permissions: AmazonBedrockFullAccess
-
-Handler: lambda_function.lambda_handler
-
-API Gateway
-REST API with CORS enabled
-
-Integration: Lambda proxy
-
-API Key required
-
-Elastic Beanstalk Benefits
-✅ Auto-scaling - Handles traffic spikes
-
-✅ Load balancing - Distributes traffic evenly
-
-✅ Health monitoring - Automatic recovery
-
-✅ Easy deployment - Simple update process
-
-✅ Managed infrastructure - No server maintenance
-
-🚀 Deployment Commands
-bash
-# Deploy updates
-eb deploy
-
-📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-EduPal AI - Making studying smarter with AWS AI services! 🎓
-
-Deployed on AWS Elastic Beanstalk for scalable, reliable performance
-
-
+👉 Do you want me to also **add badges (like GitHub stars, license, Python version, AWS logo)** at the top of your README to make it look even more professional?
